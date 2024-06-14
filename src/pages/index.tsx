@@ -58,7 +58,7 @@ const HomePage: React.FunctionComponent = () => {
 
 	const handleSubmit = () => {
 		setSubmitted(true);
-		let timeout = 3000;
+		let timeout = 2200;
 		if (selectedAnswer === currentQ?.key) {
 			setScore(score + 10);
 			timeout = 1000;
