@@ -121,9 +121,10 @@ const HomePage: React.FunctionComponent = () => {
 									</TextTransition>
 								</div>
 								<div className='section-container'>
-									<Grid columnSpace='1rem' rowSpace='1rem' columnCount={2}>
+									<Grid columnSpace='1rem' rowSpace='1rem' columnCount={1}>
 										{currentQ?.options?.map((option, index) => (
 											<Button
+												style={{ overflow: 'hidden' }}
 												variant={getOptionVariant(option)}
 												type={getOptionType(option)}
 												key={option + index}
@@ -149,7 +150,7 @@ const HomePage: React.FunctionComponent = () => {
 								</Button>
 								<Button
 									variant='primary'
-									disabled={!isLastQ && !selectedAnswer}
+									disabled={(!isLastQ && !selectedAnswer) || submitted}
 									onClick={isLastQ ? handleStartOver : handleSubmit}
 									suffixIcon={<Icon icon='zi-arrow-right' />}
 								>
